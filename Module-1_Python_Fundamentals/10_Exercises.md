@@ -1,32 +1,38 @@
-# Module 1: Practice Exercises
+# Module 1: Python Master Practice Exercises
 
-Test your knowledge by solving these simple exercises. Practice is the key to mastering Python!
+Mastery comes from solving problems. These exercises range from basic syntax to advanced OOP and file logic.
 
-## 1. Syntax and Variables
-- **Exercise 1:** Create three variables: `x` (integer), `y` (float), and `name` (string). Print their values and their types.
-- **Exercise 2:** Create a program that takes two numbers as variables and prints their sum, difference, and product.
+## 🟢 Level 1: Beginner (Syntax, Loops, Basics)
+1. **The Dynamic Calculator:** Write a program that takes two inputs and an operator (`+`, `-`, `*`, `/`) and performs the calculation. Handle strings if the user enters "5" instead of 5.
+2. **Even/Odd List:** Given a range (1 to 50), create a list containing only the even numbers using a `for` loop.
+3. **Login logic:** Create a dictionary with 3 sets of usernames and passwords. Ask the user for input and verify if they exist in the dictionary.
+4. **Multiplication Table:** Generate a multiplication table for a number provided by the user (up to 10).
 
-## 2. Operators and Control Flow
-- **Exercise 3:** Write a program that checks if a number stored in a variable `num` is **even** or **odd**.
-- **Exercise 4:** Write a `for` loop that prints numbers from 1 to 10.
-- **Exercise 5:** Create a simple login system: If `username` is "admin" and `password` is "1234", print "Login Successful", otherwise print "Access Denied".
+## 🟡 Level 2: Intermediate (Data Structures, Functions, Strings)
+5. **Word Counter:** Write a function that counts the frequency of each word in a given sentence and returns it as a dictionary.
+6. **List Comprehension Magic:** Given a list of names, create a new list containing only names that start with "S" and convert them to uppercase using a single line of code.
+7. **Set Theory:** Create two sets of student IDs for two different classes. Find:
+   - Students in both classes.
+   - Students only in the first class.
+   - All unique students across both.
+8. **Palindrome Checker:** Write a function that checks if a string is a palindrome (reads the same backward) using slicing.
 
-## 3. Data Structures
-- **Exercise 6:** Create a list of 5 colors. Add a new color to the end and then remove the second color.
-- **Exercise 7:** Create a dictionary called `car` with keys: `brand`, `model`, and `year`. Print only the `brand` of the car.
+## 🔴 Level 3: Advanced (Exceptions, Files, OOP)
+9. **The Secure File Logger:** 
+   - Ask the user for their name and a secret message.
+   - Write this to a file named `secrets.txt` using the `with` statement.
+   - Append a timestamp (search how to use the `datetime` module).
+10. **Custom Error Handling:** Write a function `sqrt_robust(x)` that calculates the square root. Raise a `ValueError` with a custom message if `x` is negative.
+11. **JSON Data Manager:** Create a script that reads a list of dictionaries from a `.json` file, updates one value, and saves it back.
+12. **The OOP Payroll System:**
+    - Create a base class `Employee` with `name` and `base_salary`.
+    - Create a child class `Developer` that adds a `bonus` attribute.
+    - Override a `calculate_pay()` method in both.
+    - Use `@property` to keep the salary protected.
 
-## 4. Functions
-- **Exercise 8:** Write a function called `is_positive(number)` that returns `True` if a number is greater than 0 and `False` otherwise.
-- **Exercise 9:** Create a function `greet(name)` that prints "Hello, [name]!".
-
-## 5. String Handling
-- **Exercise 10:** Take a string `text = "Python is Great"`. Print the string in all Uppercase and then print only the word "Python" using slicing.
-
-## 6. Exception Handling
-- **Exercise 11:** Write a program that asks for two numbers and divides them. Use `try-except` to handle the case where the user tries to divide by zero.
-
-## 7. File Handling
-- **Exercise 12:** Write a program that creates a file called `my_data.txt` and writes your name into it. Then, read the file and print the content.
-
-## 8. OOP
-- **Exercise 13:** Create a class `Circle` with an `__init__` method that takes `radius`. Add a method `area()` that calculates and returns the area (use `3.14 * radius * radius`).
+## 🏆 Graduation Challenge: The Mini Banking App
+Create a class `Account` that:
+1. Has a private `__balance`.
+2. Has methods for `deposit(amount)` and `withdraw(amount)`.
+3. Raises a custom `OverdraftError` if withdrawal exceeds balance.
+4. Logs every transaction to a text file `statement.txt`.

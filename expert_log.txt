@@ -1,0 +1,3 @@
+Expert Topic: File Handling
+Rule #1: Always use context managers.
+Rule #2: Specify encoding='utf-8'.

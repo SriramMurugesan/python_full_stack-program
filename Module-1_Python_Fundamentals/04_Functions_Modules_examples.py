@@ -1,29 +1,60 @@
 # 04_Functions_Modules_examples.py
 
-# 1. Defining a simple function
-def say_hello():
-    print("Hello from a function!")
+"""
+Step-by-step guide to Python Functions and Scope.
+Demonstrates *args, **kwargs, lambda, and the LEGB scope rule.
+"""
 
-# calling the function
-say_hello()
+# 1. Advanced Argument Handling (*args and **kwargs)
+def professional_greet(greeting, *names, **details):
+    """
+    Demonstrates flexible argument passing.
+    *names collects positional arguments into a tuple.
+    **details collects keyword arguments into a dictionary.
+    """
+    print(f"--- {greeting} ---")
+    for name in names:
+        print(f"Hello, {name}!")
+    
+    if 'location' in details:
+        print(f"Welcome to {details['location']}!")
 
-# 2. Function with parameters
-def greet_user(username):
-    print(f"Welcome, {username}!")
+# Calling with various arguments
+professional_greet("Morning", "Alice", "Bob", "Charlie", location="Python HQ", company="Google")
 
-greet_user("Sriram")
+# 2. Variable Scope (LEGB Rule)
+global_var = "I am Global"
 
-# 3. Function with return value
-def calculate_square(number):
-    return number * number
+def outer_function():
+    enclosing_var = "I am Enclosing"
+    
+    def inner_function():
+        local_var = "I am Local"
+        print(f"\nInner sees: {local_var} | {enclosing_var} | {global_var}")
+    
+    inner_function()
 
-result = calculate_square(5)
-print("Square of 5 is:", result)
+outer_function()
 
-# 4. Using a built-in module
-import math
-import random
+# 3. Modifying Global State (Use with caution!)
+counter = 0
 
-print("\n--- Using Modules ---")
-print("Square root of 25 is:", math.sqrt(25))
-print("Random number between 1 and 10:", random.randint(1, 10))
+def increment():
+    global counter
+    counter += 1
+    print(f"Counter incremented to: {counter}")
+
+increment()
+
+# 4. Lambda Functions (Anonymous)
+# Standard way to write short logic
+multiplier = lambda x, y: x * y
+print(f"\nLambda Result (5 * 4): {multiplier(5, 4)}")
+
+# 5. The __name__ == "__main__" Pattern
+def main():
+    print("\nMain function executed!")
+
+if __name__ == "__main__":
+    # This block only runs if you run this file directly
+    main()
